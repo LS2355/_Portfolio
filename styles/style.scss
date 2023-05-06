@@ -1,0 +1,80 @@
+// variables
+$purp: rgb(126, 87, 194);
+$darker-purp: #6b4487;
+
+body{
+    margin: 0;
+    background-color: rgb(20, 20, 20);
+    font-family: "Rubik", sans-serif;
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.purp-color{
+    color: $purp;
+}
+
+
+.square{
+    width: 100px;
+    height: 100px;
+    background-color: #2b2d34;
+}
+#intro-container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+#intro{
+    margin: auto;
+  
+}
+
+#intro-text{
+    margin-top: 0px;
+    font-size: 80px;
+}
+
+#claim-reward{
+    width: 75px;
+    height: 75px;
+    margin: 50px auto 0px auto; 
+    padding:15px 15px;
+    border-radius: 100%;
+    background-color: $darker-purp;
+    
+    
+    border: black 1px solid;
+    
+    display: grid;
+    place-items: center;
+    transition: width 0.4s;
+    -webkit-transition: width 0.4s;
+    overflow: hidden;
+    transition: 0.4s;
+    &:hover{
+        width:450px;
+        border-radius: 35px;
+        background-color: $purp;
+        
+    }
+}
+
+#hover-text{
+    display: none;
+    font-size: xx-large;
+    font-weight: 700;
+    color: $darker-purp;
+    &:hover{
+        color: black;
+    }
+}
+@import "./sass/_navbar";
+@import "./sass/_unlock"

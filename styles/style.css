@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  background-color: rgb(20, 20, 20);
+  font-family: "Rubik", sans-serif;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.purp-color {
+  color: rgb(126, 87, 194);
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #2b2d34;
+}
+
+#intro-container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+#intro {
+  margin: auto;
+}
+
+#intro-text {
+  margin-top: 0px;
+  font-size: 80px;
+}
+
+#claim-reward {
+  width: 75px;
+  height: 75px;
+  margin: 50px auto 0px auto;
+  padding: 15px 15px;
+  border-radius: 100%;
+  background-color: #6b4487;
+  border: black 1px solid;
+  display: grid;
+  place-items: center;
+  transition: width 0.4s;
+  -webkit-transition: width 0.4s;
+  overflow: hidden;
+  transition: 0.4s;
+}
+#claim-reward:hover {
+  width: 450px;
+  border-radius: 35px;
+  background-color: rgb(126, 87, 194);
+}
+
+#hover-text {
+  display: none;
+  font-size: xx-large;
+  font-weight: 700;
+  color: #6b4487;
+}
+#hover-text:hover {
+  color: black;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+}
+
+.nav-section {
+  padding: 3rem 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.Title {
+  width: auto;
+  justify-content: left;
+  float: left;
+  flex-grow: 1;
+}
+.Title .logo-text {
+  font-weight: 600;
+  color: white;
+  margin: 0px;
+  font-size: 30px;
+}
+
+.nav {
+  flex-grow: 3;
+}
+.nav a {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.nav a:hover {
+  color: rgb(126, 87, 194);
+}
+
+.socials {
+  flex-grow: 1;
+}
+
+.btn-lock {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-lock svg {
+  fill: none;
+  transform: translate3d(0, 0, 0);
+}
+
+.btn-lock svg .bling {
+  stroke: #ffffff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 3;
+  stroke-dashoffset: 15;
+  transition: all 0.3s ease;
+}
+
+.btn-lock svg .lock {
+  stroke: black;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 36;
+  transition: all 0.4s ease;
+}
+
+.btn-lock svg .lockb {
+  fill: black;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  transform: rotate(8deg);
+  transform-origin: 14px 20px;
+  transition: all 0.2s ease;
+}
+
+#inpLock {
+  display: none;
+}
+
+#inpLock:checked + label svg {
+  opacity: 1;
+}
+
+#inpLock:not(:checked) + label svg .bling {
+  animation: bling6132 0.3s linear forwards;
+  animation-delay: 0.2s;
+}
+
+#inpLock:checked + label svg .lock {
+  stroke-dasharray: 48;
+  animation: locked 0.3s linear forwards;
+}
+
+#inpLock:checked + label svg .lockb {
+  transform: rotate(0);
+  transform-origin: 14px 22px;
+}
+
+@keyframes bling6132 {
+  50% {
+    stroke-dasharray: 3;
+    stroke-dashoffset: 12;
+  }
+  100% {
+    stroke-dasharray: 3;
+    stroke-dashoffset: 9;
+  }
+}
+@keyframes locked {
+  50% {
+    transform: translateY(1px);
+  }
+}
+.locks {
+  display: grid;
+  place-items: center;
+  position: relative;
+  right: -6px;
+  top: -4px;
+}/*# sourceMappingURL=style.css.map */
