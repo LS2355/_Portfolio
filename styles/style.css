@@ -10,14 +10,12 @@ a {
   color: white;
 }
 
-.purp-color {
-  color: rgb(126, 87, 194);
+main {
+  display: none;
 }
 
-.square {
-  width: 100px;
-  height: 100px;
-  background-color: #2b2d34;
+.purp-color {
+  color: rgb(126, 87, 194);
 }
 
 #intro-container {
@@ -70,7 +68,7 @@ a {
   color: black;
 }
 
-.navbar {
+nav {
   width: 100%;
   display: flex;
 }
@@ -83,13 +81,13 @@ a {
   justify-content: center;
 }
 
-.Title {
+.nav-title {
   width: auto;
   justify-content: left;
   float: left;
   flex-grow: 1;
 }
-.Title .logo-text {
+.nav-title .logo-text {
   font-weight: 600;
   color: white;
   margin: 0px;
@@ -107,7 +105,7 @@ a {
   color: rgb(126, 87, 194);
 }
 
-.socials {
+.nav-socials {
   flex-grow: 1;
 }
 
@@ -197,4 +195,46 @@ a {
   position: relative;
   right: -6px;
   top: -4px;
+}
+
+.box {
+  background-color: rgb(16, 1, 113);
+  width: 80%;
+  height: 450px;
+  border-radius: 12px;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.box-image-container {
+  width: 40%;
+  height: 100%;
+  background-color: black;
+  float: left;
+}
+
+.box-text {
+  background-color: white;
+  color: tan;
+  display: block;
+  float: right;
+  width: 60%;
+  height: 100%;
+}
+
+#mouse-trailer {
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  background-color: white;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 5000;
+  pointer-events: none;
+  opacity: 0;
+  display: none;
+}
+
+body:hover > #mouse-trailer {
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */

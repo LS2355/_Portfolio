@@ -12,17 +12,14 @@ a{
     text-decoration: none;
     color: white;
 }
+main{
+    display: none;
+}
 
 .purp-color{
     color: $purp;
 }
 
-
-.square{
-    width: 100px;
-    height: 100px;
-    background-color: #2b2d34;
-}
 #intro-container{
     width: 100vw;
     height: 100vh;
@@ -77,4 +74,6 @@ a{
     }
 }
 @import "./sass/_navbar";
-@import "./sass/_unlock"
+@import "./sass/_unlock";
+@import "./sass/_box";
+@import "./sass/_mouse"

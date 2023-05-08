@@ -7,6 +7,8 @@ const introText = document.querySelector("#intro-text");
 const inputLock =document.querySelector("#inpLock")
 const calimReward = document.querySelector("#claim-reward");
 const introContainer = document.querySelector("#intro-container");
+const main = document.querySelector("main");
+const mouseTrail = document.querySelector("#mouse-trailer");
 
 //lockhover & noHover
 const DaLock = document.querySelector(".locks");
@@ -61,7 +63,9 @@ function lockNoHover () {
 
 function closeIntro () {
   closeIntroAudio.play();
-  introContainer.style.display= "none"
+  introContainer.style.display= "none";
+  main.style.display="block";
+  mouseTrail.style.display = "none";
 }
 
 
