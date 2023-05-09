@@ -1,5 +1,5 @@
 // variables
-$purp: rgb(126, 87, 194);
+$purp: mediumslateblue;
 $darker-purp: #6b4487;
 
 body{
@@ -11,9 +11,11 @@ body{
 a{
     text-decoration: none;
     color: white;
+    cursor: none;
 }
 main{
     display: none;
+    cursor: none;
 }
 
 .purp-color{
@@ -76,4 +78,5 @@ main{
 @import "./sass/_navbar";
 @import "./sass/_unlock";
 @import "./sass/_box";
-@import "./sass/_mouse"
+@import "./sass/_mouse";
+@import "./sass/cards";

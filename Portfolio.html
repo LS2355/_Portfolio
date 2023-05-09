@@ -1,3 +1,16 @@
+<!-- 
+    issues:
+    cards- fix vackground ; fix length and add pic with blur; make cards float like they are in space (use css animations)
+    about me- make it dumbass
+    mouse trail - make a new svg because the one we have is pretty ugly
+    links-when hovering on a clickable object maybe bring down the opacity of the cursor on some of them 
+    sections- make it (im thinking when u click on the cards u get a nice looking pop up)
+ -->
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +19,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Salcedo Portfolio</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <!-- https://colorswall.com/palette/183638
-    .  -->
+    <!-- https://colorswall.com/palette/183638-->
 </head>
 <body onload="runIntro()">
 
     <div id="mouse-trailer">
-        
+        <div id="mouse-color">
+            <img id="mouse-icon" src="./resources/up-right-arrow.svg" alt="up right arrow">
+        </div>
     </div>
  
+
+<!-- add data-type to clickable objects either link or other ex: <a class="interactable" data-type="link"> -->
 
 
 
@@ -52,7 +68,7 @@
     <div class="nav nav-section">
         <a href="#top">Personal</a>
         <a href="#top">Freelace</a>
-        <a href="#top">skills</a>
+        <a href="#top">Skills</a>
         <a href="#top">idk</a>
 
     </div>
@@ -63,46 +79,19 @@
     </div>
   </nav>
 
-  <div class="box" id="Personal Projects">
-    <div class="box-image-container">
-        <img src="" alt="preview image of my personal projects">
-        <div class="text-over-image">
-            Personal
-            <span class="smaller-text">PROJECTS</span>
-        </div>
-    </div>
-    <div class="box-text">
-        lms foo
+
+
+
+
+  <div class="card interactable">
+    <div class="card-content">
+      <h3>Valuable Info</h3>
+      <h1>The worst thing about coding is the dementors</h1>
+      <p>I can't stand when I have spent the last 47 minutes adjusting the rgb on my gradient only to have a dementor appear and suck my soul out.</p>
     </div>
   </div>
+  
 
-  <!-- <div class="box" id="Freelace Projects">
-    <div class="box-image-container">
-        <img src="" alt="preview image of my personal projects">
-        <div class="text-over-image">
-            Freelace
-            <span class="smaller-text">WORK</span>
-        </div>
-    </div>
-    <div class="box-text">
-        
-    </div>
-  </div>
-
-  <div class="box" id="Skills">
-    <div class="box-image-container">
-        <img src="" alt="preview image of my personal projects">
-        <div class="text-over-image">
-            Skills
-            <span class="smaller-text">DOG BUTT</span>
-        </div>
-    </div>
-    <div class="box-text">
-        
-    </div>
-  </div>
-
- -->
 
 
 
@@ -117,5 +106,7 @@
 
 <script src="./intro.js"></script>
 <script src="./mouse.js"></script>
+<!-- Font awasome -->
+
 </body>
 </html>

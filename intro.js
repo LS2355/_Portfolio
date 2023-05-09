@@ -65,7 +65,7 @@ function closeIntro () {
   closeIntroAudio.play();
   introContainer.style.display= "none";
   main.style.display="block";
-  mouseTrail.style.display = "none";
+  mouseTrail.style.display = "inline";
 }
 
 
