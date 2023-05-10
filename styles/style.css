@@ -3,6 +3,7 @@ body {
   background-color: rgb(20, 20, 20);
   font-family: "Rubik", sans-serif;
   color: white;
+  overflow: hidden;
 }
 
 a {
@@ -14,6 +15,7 @@ a {
 main {
   display: none;
   cursor: none;
+  opacity: 0;
 }
 
 .purp-color {
@@ -37,6 +39,7 @@ main {
 #intro-text {
   margin-top: 0px;
   font-size: 80px;
+  animation-fill-mode: forwards;
 }
 
 #claim-reward {
@@ -44,30 +47,12 @@ main {
   height: 75px;
   margin: 50px auto 0px auto;
   padding: 15px 15px;
-  border-radius: 100%;
+  border-radius: 75px;
   background-color: #6b4487;
   border: black 1px solid;
   display: grid;
   place-items: center;
-  transition: width 0.4s;
-  -webkit-transition: width 0.4s;
   overflow: hidden;
-  transition: 0.4s;
-}
-#claim-reward:hover {
-  width: 450px;
-  border-radius: 35px;
-  background-color: mediumslateblue;
-}
-
-#hover-text {
-  display: none;
-  font-size: xx-large;
-  font-weight: 700;
-  color: #6b4487;
-}
-#hover-text:hover {
-  color: black;
 }
 
 nav {
@@ -197,8 +182,27 @@ nav {
   position: relative;
   right: -6px;
   top: -4px;
+  animation-fill-mode: forwards;
 }
 
+@keyframes open {
+  100% {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0px;
+    background-color: rgb(20, 20, 20);
+  }
+}
+@keyframes fadeout {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
 .box {
   background-color: rgb(16, 1, 113);
   width: 80%;
@@ -245,14 +249,17 @@ nav {
   z-index: 500;
   pointer-events: none;
   padding: 0px;
+  opacity: 0;
 }
 #mouse-color img {
   margin: auto;
   width: 8px;
   height: 8px;
   position: relative;
-  top: 1.5px;
+  top: 1.35px;
   left: 0px;
+  fill: black;
+  transform: rotate(-10deg);
 }
 
 body:hover > #mouse-trailer {
