@@ -3,9 +3,6 @@
 
 
 
-
-
-
 const dot = document.getElementById("mouse-color");
 const mouse = document.getElementById("mouse-trailer");
 const icon = document.getElementById("mouse-icon");
@@ -30,18 +27,31 @@ const cursor = (e, interacting) =>{
 
 
 
+
 window.onmousemove = e =>{
     const interactable = e.target.closest(".interactable"),
           interacting = interactable !== null;
 
     cursor(e, interacting)
-
     if (interacting) {
         icon.style.display = "block"
+
+        
     }
     else{
         icon.style.display= "none"
+
     }
+
+    // interactable? blure.style.filter= "blur(3px)": blure.style.filter= "blur(0px)";
+
+
 }
 
+// const blure = document.querySelector(".blur")
+// function blurIt (e) {
 
+//     var blurStyles = getComputedStyle(blure)
+//     var tun=blurStyles.setProperty('filter', 'blur(3px)')
+
+// }

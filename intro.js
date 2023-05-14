@@ -64,7 +64,7 @@ function runIntro() {
         }, 350)
         setTimeout(()=>{
           introContainer.style.display="none"//makes intro container disapear
-          main.style.display="block"
+          main.style.display="grid"
           mouseTrail.style.display = "inline"
           main.animate(mainOpacity, mainOpacityOptions);
           mouseColor.animate(mainOpacity,mainOpacityOptions)
@@ -76,5 +76,4 @@ function runIntro() {
       
   }, 1850)
 }
-
 

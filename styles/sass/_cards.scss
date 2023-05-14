@@ -6,15 +6,25 @@
   h1, h2, h3, p {
     margin: 0rem;
   }
+
+  .main-container{
+    width: 80%;
+  }
   
   .card {
-    width: 640px;
+    height: 300px;
+    width: 750px;
     position: relative;
     background-color: rgb(16 16 16);
     border: 1px solid rgb(255 255 255 / 5%);
     border-radius: 1.5rem;
-    padding: 1rem;
+    padding: 0px;
+    display: flex;
+    transition: 400ms;
+
+
   }
+
   
   .card:after {  
     content: "";
@@ -44,7 +54,28 @@
     opacity: 1;
   }
   
+  .card-image{
+    width: 40%;
+    display: flex;
+    height: 299px;
+    border-radius: 1.25rem 0  0 1.25rem;
+    z-index: 600;
+    background-image: url("https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    //the hover event is located on the parent
+  }
+    // filter:blur(2px) brightness(80%) saturate(90%);
+    // -webkit-filter: blur(2px) brightness(80%) saturate(90%);
+    // transition: filter 800ms,;
+
+  
+
+
   .card-content {  
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,7 +87,7 @@
     );
     background-position: 50% 50%;
     background-size: 1.1rem 1.1rem;
-    padding: 4rem;
+    padding: 4rem auto;
     border-radius: 1.25rem;
     overflow: hidden;
   }

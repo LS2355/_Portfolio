@@ -8,7 +8,7 @@
     sections- make it (im thinking when u click on the cards u get a nice looking pop up)
  -->
 
-
+<!-- only when hovering blur everything but that obj -->
 
 
 <!-- Programmed by : Luis Salcedo  -->
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <!-- https://colorswall.com/palette/183638-->
 </head>
-<body onload="runIntro()">
+<body onload="runIntro()" class="body">
 
     <div id="mouse-trailer">
         <div id="mouse-color">
@@ -40,7 +40,7 @@
     <div id="intro">
         <h1 id="intro-text" data-value="PORTFOLIO UNLOCKED">PORTFOLIO UNLOCKED</h1>
         <!--add a unlock sound on click-->
-        <div id="claim-reward" onmouseover="lockHover()" onmouseout="lockNoHover()">
+        <div id="claim-reward">
             <div class="locks"><input id="inpLock" type="checkbox" checked disabled>
                 <label class="btn-lock" for="inpLock">
                     <svg viewBox="0 0 36 40">
@@ -80,18 +80,58 @@
   </nav>
 
 
+<!-- //put brightness filter on whole element -->
+  <div class="main-container">
+    <div class="about-me">
+
+
+        
+    </div>
 
 
 
-  <div class="card interactable">
+
+<div class="blur">
+
+
+    <div class="card interactable" id="personal-projects" onmouseover="blurIt(this)">
+      <div class="card-image card-Personal">
+        
+      </div>
+      <div class="card-content" >
+        <h3>Valuable Info</h3>
+        <h1>The worst thing about coding is the dementors</h1>
+        <p>I can't stand when I have spent the last 47 minutes adjusting the rgb on my gradient only to have a dementor appear and suck my soul out.</p>
+      </div>
+   </div>
+
+   <div class="card interactable" id="freelance-projects" onmouseover="blurIt(this)">
+    <div class="card-image card-Personal">
+      
+    </div>
     <div class="card-content">
       <h3>Valuable Info</h3>
       <h1>The worst thing about coding is the dementors</h1>
       <p>I can't stand when I have spent the last 47 minutes adjusting the rgb on my gradient only to have a dementor appear and suck my soul out.</p>
     </div>
+ </div>
+ 
+ <div class="card interactable"  onmouseover="blurIt(this)">
+    <div class="card-image card-Personal">
+      
+    </div>
+    <div class="card-content">
+      <h3>Valuable Info</h3>
+      <h1>The worst thing about coding is the dementors</h1>
+      <p>I can't stand when I have spent the last 47 minutes adjusting the rgb on my gradient only to have a dementor appear and suck my soul out.</p>
+    </div>
+ </div>
   </div>
   
 
+
+  <img src="https://picsum.photos/id/237/536/354" alt="">
+  
 
 
 
@@ -102,7 +142,7 @@
 
 
 
-
+</div>
 
 <script src="./intro.js"></script>
 <script src="./mouse.js"></script>

@@ -13,12 +13,14 @@ body{
 a{
     text-decoration: none;
     color: white;
-    cursor: none;
+    // cursor: none;  //dont forget to put these back
+    
 }
 main{
     display: none;
-    cursor: none;
+    // cursor: none;   //dont forget to put these back
     opacity: 0;
+    place-items: center;
 }
 
 .purp-color{
@@ -61,6 +63,18 @@ main{
     overflow: hidden;
 
 }
+.blur{
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+}
+.blur .card:hover {
+    transform: scale(1.1, 1.1);
+  }
+  
+  .blur:hover > .card:not(:hover) {
+    filter: blur(10px);
+  }
 @import "./sass/_navbar";
 @import "./sass/_unlock";
 @import "./sass/_box";
