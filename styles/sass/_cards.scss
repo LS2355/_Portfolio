@@ -8,12 +8,12 @@
   }
 
   .main-container{
-    width: 80%;
+    width: 85%;
   }
   
   .card {
-    height: 300px;
-    width: 750px;
+    height: 280px;
+    width: 45%;
     position: relative;
     background-color: rgb(16 16 16);
     border: 1px solid rgb(255 255 255 / 5%);
@@ -21,7 +21,7 @@
     padding: 0px;
     display: flex;
     transition: 400ms;
-
+    margin: 25px auto;
 
   }
 
@@ -57,14 +57,14 @@
   .card-image{
     width: 40%;
     display: flex;
-    height: 299px;
+    height: 99.9%;
     border-radius: 1.25rem 0  0 1.25rem;
     z-index: 600;
-    background-image: url("https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+    background-image: url("https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
+    filter: brightness(60%);
     //the hover event is located on the parent
   }
     // filter:blur(2px) brightness(80%) saturate(90%);
@@ -131,4 +131,11 @@
     }
   }
   
-  
+  // ids
+  #personal-projects{
+    float: left;
+  }
+
+  #freelance-projects{
+    float: right;
+  }

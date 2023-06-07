@@ -2,13 +2,21 @@
 $purp: mediumslateblue;
 $darker-purp: #6b4487;
 $background: rgb(20, 20, 20);
-
+$lil-cards: #181818;
+$border-radius: 15px;
+$little-text-dark: rgb(56, 56, 56);
+$little-text-hover: white;
+*{
+    font-family: "Rubik", sans-serif;
+}
 body{
     margin: 0;
+    padding: 0;
     background-color:$background;
     font-family: "Rubik", sans-serif;
     color: white;
-    overflow: hidden;
+    overflow-x: hidden;
+    // overflow: hidden;
 }
 a{
     text-decoration: none;
@@ -21,6 +29,7 @@ main{
     // cursor: none;   //dont forget to put these back
     opacity: 0;
     place-items: center;
+    
 }
 
 .purp-color{
@@ -67,16 +76,24 @@ main{
     width: auto;
     margin: 0px;
     padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
 }
+
 .blur .card:hover {
     transform: scale(1.1, 1.1);
   }
   
-  .blur:hover > .card:not(:hover) {
-    filter: blur(10px);
-  }
+//   .blur:hover > .card:not(:hover) {
+//     filter: blur(3px);
+//   }
 @import "./sass/_navbar";
 @import "./sass/_unlock";
 @import "./sass/_box";
 @import "./sass/_mouse";
 @import "./sass/cards";
+@import "./sass/lilCards";
+@import "./sass/aboutme";
+@import "./sass/popups";
+@import "./sass/slide";
+@import "./sass/projects";

@@ -6,13 +6,19 @@
     mouse trail - make a new svg because the one we have is pretty ugly
     links-when hovering on a clickable object maybe bring down the opacity of the cursor on some of them 
     sections- make it (im thinking when u click on the cards u get a nice looking pop up)
- -->
+
+    using js apply blur to the footer and the 
+  -->
 
 <!-- only when hovering blur everything but that obj -->
-
-
+<!-- https://www.quora.com/How-do-you-blur-everything-except-a-specific-element-JavaScript-HTML-CSS-jQuery-blur-and-development -->
+<!-- https://teamtreehouse.com/community/how-to-blur-the-entire-page-except-the-form-once-user-clicks-into-an-input-select-or-textarea-field -->
 <!-- Programmed by : Luis Salcedo  -->
+
+
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,13 +26,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Salcedo Portfolio</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <!-- Font awasome -->
+    <script src="https://kit.fontawesome.com/648af7f8b2.js" crossorigin="anonymous"></script>
     <!-- https://colorswall.com/palette/183638-->
 </head>
 <body onload="runIntro()" class="body">
 
     <div id="mouse-trailer">
         <div id="mouse-color">
-            <img id="mouse-icon" src="./resources/up-right-arrow.svg" alt="up right arrow">
+          <i id="mouse-icon" class=""></i>
         </div>
     </div>
  
@@ -57,6 +65,26 @@
     </div>
 </div>
 </div>
+
+<!-- pop ups -->
+<div class="popup-container">
+  <div class="popup">
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <main>
     <!-- i only want this to appear after intro disappers -->
 
@@ -69,43 +97,54 @@
         <a href="#top">Personal</a>
         <a href="#top">Freelace</a>
         <a href="#top">Skills</a>
-        <a href="#top">idk</a>
+        <a href="#top">Contact</a>
+        
 
     </div>
     <div class="nav-socials nav-section">
-        <a href="#top">social</a>
-        <a href="#top">social</a>
-        <a href="#top">social</a>        
+        <a href="#top" class="social" data-type="social"><!--GitHub-->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+        </a>
+        <a href="#top" class="social" data-type="social"><!--Linkedin-->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+          </svg>
+        </a>
+        <a href="#top" class="social" data-type="social"><!--Email-->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+          </svg>
+        </a>        
     </div>
   </nav>
 
 
 <!-- //put brightness filter on whole element -->
-  <div class="main-container">
-    <div class="about-me">
+<div class="main-container">
+  <div class="about-me">
+    <div class="name">LUIS SALCEDO</div>
+    <div class="profession D-TEXT">SOFTWARE ENGINEER</div>
+      
+  </div>
 
 
-        
-    </div>
 
 
-
-
-<div class="blur">
-
-
-    <div class="card interactable" id="personal-projects" onmouseover="blurIt(this)">
+<!-- <div class="blur">
+    <div class="card interactable" id="personal-projects" data-type="card" onmouseout="noBlur()" onmouseover="blurIt()">
       <div class="card-image card-Personal">
         
       </div>
       <div class="card-content" >
-        <h3>Valuable Info</h3>
+        <h3>Personal Projects</h3>
         <h1>The worst thing about coding is the dementors</h1>
         <p>I can't stand when I have spent the last 47 minutes adjusting the rgb on my gradient only to have a dementor appear and suck my soul out.</p>
-      </div>
+      </div>  
    </div>
 
-   <div class="card interactable" id="freelance-projects" onmouseover="blurIt(this)">
+   <div class="card interactable" id="freelance-projects" data-type="card" onmouseout="noBlur()" onmouseover="blurIt()"> 
     <div class="card-image card-Personal">
       
     </div>
@@ -115,22 +154,119 @@
       <p>I can't stand when I have spent the last 47 minutes adjusting the rgb on my gradient only to have a dementor appear and suck my soul out.</p>
     </div>
  </div>
+</div> -->
+
+<div class="project-section">
+  <div id="top-square">
+     <div class="teck-stack">
+      <div class="stack">
+          <h3 class="stack-content"><span class="hashtag">#</span> JavaScript</h3>
+      </div>
+    </div>
+  </div>
+  <div class="projects-container">
+    <div class="projects" id="left-square">
+      <div class="project-content" data-content-id="left">
+          <h1 class="project-title">Title</h1>
+          <h2 class="project-type">Type</h2>
+          <p class="project-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed, deleniti quasi, similique aliquam eos tenetur ullam, at molestiae repellat voluptates fugiat impedit assumenda dolorum modi ducimus vel error. Nemo, expedita.</p>
+          <div class="project-btn-container">
+            <button class="project-btn">GitHub</button>
+            <button class="project-btn">Check it out</button>
+          </div>
+      </div>
+    </div>  
+    <div class="projects" id="mid-square">
+      <div class="project-content" data-content-id="left">
+        <h1 class="project-title">Title</h1>
+        <h2 class="project-type">Type</h2>
+        <p class="project-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed, deleniti quasi, similique aliquam eos tenetur ullam, at molestiae repellat voluptates fugiat impedit assumenda dolorum modi ducimus vel error. Nemo, expedita.</p>
+        <div class="project-btn-container">
+          <button class="project-btn">GitHub</button>
+          <button class="project-btn">Check it out</button>
+        </div>
+      </div>
+    </div> 
+    <div class="projects" id="right-square">
+      <div class="project-content" data-content-id="left">
+        <h1 class="project-title">Title</h1>
+        <h2 class="project-type">Type</h2>
+        <p class="project-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed, deleniti quasi, similique aliquam eos tenetur ullam, at molestiae repellat voluptates fugiat impedit assumenda dolorum modi ducimus vel error. Nemo, expedita.</p>
+        <div class="project-btn-container">
+          <button class="project-btn">GitHub</button>
+          <button class="project-btn">Check it out</button>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
  
- <div class="card interactable"  onmouseover="blurIt(this)">
-    <div class="card-image card-Personal">
-      
+
+
+
+
+
+
+</div>
+
+
+
+<!-- small cards -->
+<div class="little-cards">  
+  <div class="little-card interactable" id="left-little-card" data-type="little-card" onclick="popup()">
+  
+    <div class="little-card-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="skills-card-icon">
+        <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/>
+      </svg>
     </div>
-    <div class="card-content">
-      <h3>Valuable Info</h3>
-      <h1>The worst thing about coding is the dementors</h1>
-      <p>I can't stand when I have spent the last 47 minutes adjusting the rgb on my gradient only to have a dementor appear and suck my soul out.</p>
-    </div>
- </div>
+    <div class="little-card-title">Resume</div>
+  <div class="little-card-bottom">
+   These area skills and i will write something good here later
   </div>
   
+  
+  </div>
+
+  <div class="little-card interactable" id="middle-little-card" data-type="little-card" onclick="popup()">
+  
+    <div class="little-card-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="skills-card-icon" id="resume-icon">
+        <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
+        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+      </svg>
+    </div>
+    <div class="little-card-title">Skills</div>
+  <div class="little-card-bottom">
+   These area skills and i will write something good here later
+  </div>
+  
+  
+  </div>
 
 
-  <img src="https://picsum.photos/id/237/536/354" alt="">
+
+  <div class="little-card interactable" id="right-little-card" data-type="little-card" onclick="popup()">
+  
+    <div class="little-card-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"  class="skills-card-icon" id="contact-icon">
+        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+      </svg>
+    </div>
+    <div class="little-card-title">About/Contact</div>
+  <div class="little-card-bottom">
+   These area skills and i will write something good here later
+  </div>
+  
+  
+  </div>
+
+
+
+
+
+
+
   
 
 
@@ -144,9 +280,11 @@
 
 </div>
 
+<script src="./main.js"></script>
+<script src="./blur.js"></script>
 <script src="./intro.js"></script>
 <script src="./mouse.js"></script>
-<!-- Font awasome -->
+<script src="popups.js"></script>
 
 </body>
 </html>

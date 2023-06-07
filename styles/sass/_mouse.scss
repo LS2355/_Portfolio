@@ -26,18 +26,29 @@
     pointer-events: none;
     padding: 0px;
     opacity: 0;
-
-    img{
-    margin: auto;
-    width: 8px;
-    height: 8px;
-    position: relative;
-    top: 1.35px;
-    left: 0px; 
-    fill: black;
-    transform: rotate(-10deg);
-    }
+    transition: 600ms;
 }
 body:hover > #mouse-trailer{
     opacity: 1;
+}
+
+#mouse-icon{
+    margin: auto;
+    width: auto;
+    height: auto;
+    position: relative;
+
+    fill: black;
+    transform: scale(.5);
+    // transform: rotate(-10deg);
+    color: black;
+}
+
+.caret-up{
+    top: 4.5px;
+    left: 1px;
+}
+.full-screeno{
+    top: 4.7px;
+    left: 0px;
 }

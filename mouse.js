@@ -12,7 +12,7 @@ const cursor = (e, interacting) =>{
           y = e.clientY - mouse.offsetHeight / 2;
 
     const scale = {
-        transform : `scale(${interacting ? 8 : 1})`
+        transform : `scale(${interacting ? 6 : 1})`
 
     }
     mouse.style.transform = `translate(${x}px, ${y}px)`
@@ -24,6 +24,14 @@ const cursor = (e, interacting) =>{
 
 }
 
+const getTrailerClass = type =>{
+    switch(type){
+        case "little-card":
+            return "fa-solid fa-expand fa-xs full-screeno";
+        default:
+            return "fa-solid fa-caret-up fa-2xs caret-up"
+    }
+}
 
 
 
@@ -34,12 +42,17 @@ window.onmousemove = e =>{
 
     cursor(e, interacting)
     if (interacting) {
+        icon.className = getTrailerClass(interactable.dataset.type)
         icon.style.display = "block"
+        mouse.style.opacity = "0.6"
+        dot.style.backgroundColor = "mediumslateblue"
 
         
     }
     else{
         icon.style.display= "none"
+        mouse.style.opacity = "1"
+        dot.style.backgroundColor = "white"
 
     }
 
@@ -47,11 +60,3 @@ window.onmousemove = e =>{
 
 
 }
-
-// const blure = document.querySelector(".blur")
-// function blurIt (e) {
-
-//     var blurStyles = getComputedStyle(blure)
-//     var tun=blurStyles.setProperty('filter', 'blur(3px)')
-
-// }

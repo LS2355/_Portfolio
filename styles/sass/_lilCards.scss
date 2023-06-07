@@ -1,0 +1,87 @@
+.little-cards{
+width: 100%;
+height: auto;
+display: flex;
+justify-content: space-around;
+margin: 100px 40px 60px 40px;
+}
+.little-card{
+    background-color: $lil-cards;
+    width: 250px;
+    height: 250px;
+    border-radius: $border-radius;
+    border: 1px solid rgb(43, 43, 43);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 3px 3px 4px #1f1f1f;
+    transition: 400ms;
+
+
+    &:hover .skills-card-icon{
+        fill:$purp;
+    }
+    &:hover .little-card-bottom{
+        color:$little-text-hover
+    }
+    &:hover .little-card-title{
+        color:$little-text-hover;
+        transform: scale(1.05);
+    }
+}
+
+#left-little-card:hover{
+    box-shadow: -4px 4px 10px $purp;
+}
+#middle-little-card:hover{
+    box-shadow: 0px 0px 12px $purp;
+}
+#right-little-card:hover{
+    box-shadow: 4px 4px 10px $purp;
+}
+
+
+
+
+
+
+
+// add boxshadow so it doesnt look so plain
+
+.little-card-icon{
+    width: auto;
+    height: 50%;
+    display: grid;
+    place-items: center;
+}
+.little-card-title{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: x-large;
+    color: $little-text-dark;
+    transition: 400ms;
+}
+.little-card-bottom{
+    color: $little-text-dark;
+    text-align: center;
+    padding: 5px;
+
+    transition: 400ms;
+}
+
+.skills-card-icon{
+    width: 110px;
+    height: 110px;
+    fill: $little-text-dark;
+    transition: 400ms;
+}
+
+#resume-icon{
+    height: 90px;
+}
+#contact-icon{
+    height: 90px;
+}
+
