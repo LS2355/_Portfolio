@@ -29,9 +29,12 @@ main{
     // cursor: none;   //dont forget to put these back
     opacity: 0;
     place-items: center;
+    overflow: hidden;
     
 }
-
+.main-container{
+    overflow: hidden;
+}
 .purp-color{
     color: $purp;
 }

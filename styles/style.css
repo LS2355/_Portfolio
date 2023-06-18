@@ -20,6 +20,11 @@ main {
   display: none;
   opacity: 0;
   place-items: center;
+  overflow: hidden;
+}
+
+.main-container {
+  overflow: hidden;
 }
 
 .purp-color {
@@ -690,12 +695,15 @@ h1, h2, h3, p {
   background-position: center;
   background-repeat: no-repeat;
   transition: all 600ms;
+  filter: brightness(80%);
+}
+.projects:hover {
+  filter: brightness(100%);
 }
 
 .projects-container {
   width: 100%;
   height: auto;
-  background-color: rgb(112, 41, 41);
   display: flex;
   flex-direction: row;
 }
@@ -709,15 +717,36 @@ h1, h2, h3, p {
 }
 
 #left-square {
-  flex-grow: 1;
+  flex-grow: 0.5;
+  background-image: url("https://randomwordgenerator.com/img/picture-generator/57e8d64a4d56a514f1dc8460962e33791c3ad6e04e507440762e79d79649c7_640.jpg");
+}
+#left-square:hover {
+  flex-grow: 15;
 }
 
 #mid-square {
-  flex-grow: 1;
+  flex-grow: 0.5;
+  background-image: url("https://randomwordgenerator.com/img/picture-generator/57e8d64a4d56a514f1dc8460962e33791c3ad6e04e507440762e79d79649c7_640.jpg");
+}
+#mid-square:hover {
+  flex-grow: 15;
 }
 
 #right-square {
-  flex-grow: 1;
+  flex-grow: 0.5;
+  background-image: url("https://randomwordgenerator.com/img/picture-generator/57e8d64a4d56a514f1dc8460962e33791c3ad6e04e507440762e79d79649c7_640.jpg");
+}
+#right-square:hover {
+  flex-grow: 15;
+}
+
+.project-content {
+  opacity: 0;
+  transition: all 200ms;
+}
+
+.projects:hover .project-content {
+  opacity: 1;
 }
 
 .stack {
@@ -726,10 +755,29 @@ h1, h2, h3, p {
   color: rgb(0, 0, 0);
   padding: 0 5px;
   width: auto;
+  margin: 0px 10px;
   height: 37.5px;
   background-image: linear-gradient(to bottom right, #6b4487, mediumslateblue, #6b4487);
   box-shadow: 0px 0px 9px rgb(0, 0, 0);
   border-radius: 12px;
+}
+
+.stack-scroll {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  animation: stackScroll 11s linear 2s infinite;
+  justify-content: space-around;
+}
+
+.teck-stack {
+  display: flex;
+  width: 100%;
+  height: max;
+  justify-content: center;
+  background: linear-gradient(90deg, #0044b1, transparent 70%, #0062ff);
+  inset: 0;
 }
 
 .stack-content {
@@ -740,4 +788,13 @@ h1, h2, h3, p {
 
 .hashtag {
   color: rgb(173, 173, 173);
+}
+
+@keyframes stackScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
 }/*# sourceMappingURL=style.css.map */
