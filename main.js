@@ -1,122 +1,83 @@
-// const leftProject = document.querySelector("#left-square");
-// const middleProject = document.querySelector("#mid-square");
-// const rightProject = document.querySelector("#right-square");
-// const teckStack= document.getElementById("top-square");
-
-// const leftProjectContent = leftProject.children[0];
-// const middleProjectContent = middleProject.children[0];
-// const rightProjectContent = rightProject.children[0];
-
-// const addOpacity ={opacity: "1"};
-// const removeOpacity = {opacity: "0"};
+const scrollParent = document.querySelector(".scroll-parent");
+//check how to import a variable from another file
+//check if its possiable to share event listeners between fi
 
 
-// const opacityDuration= {
-//     duration: 200,
-//     fill: "forwards"
-// }
+const leftStackArray = ["abc","abc","abc","abc","abc","abc","abc","abc"];
+const middleStackArray = ["bac","bac","bac","bac","bac","bac","bac","bac"];
+const rightStackArray = ["dca","dca","dca","dca","dca","dca","dca","dca"];
 
 
-// function stretch (id){
-//     if (id == "left-square"){
-//         buildStack()
-
-//         //turn on current div
-
-//         //turn off other divs;
-//         //turn down opacity to 0;
-
-
-//         // projectControl(true,false,false);
-//     }
-//     else if (id == "mid-square"){
-
-//     }
-//     else if (id == "right-square"){
-
-//     }//make sure to keep the same as the transition time or else it won't look good
-
-// }
-
-// //these parameters will be used to see what elements will turn on and off
+//need to make it so that on default there is nothing in the scrool element;
+//just do a simple text
+//not sure if i should make it scroll or not
+//need this to pop up on page load and when im not hovering over a project
 
 
 
 
-// function projectControl (left,middle,right) {
-// setTimeout(()=>{
-//     leftProject.children[0].style.display= left ? 'flex': 'none';
-//     middleProject.children[0].style.display= middle ? 'flex': 'none';
-//     rightProject.children[0].style.display= right ? 'flex': 'none';
-// },0)
-
-// }
-
-
-
-
-    const sb = document.querySelector("#mid-square")
-// leftProject.addEventListener("mouseover",(e)=>{stretch(e.target.id)});
-// middleProject.addEventListener("mouseover",(e)=>{stretch(e.target.id)});
-// rightProject.addEventListener("mouseover",(e)=>{stretch(e.target.id)})
-function kys () {
-for (let i = 0; i < leftProjectStack.length; i++) {
-    console.log("ran " + i)
-
-     
-    const bs = document.createElement("div");
-    bs.textContent = leftProjectStack[i]
-    sb.append(bs)    
-    console.log(leftProjectStack[i])
-    
-}
+function clearstack () {
+  scrollParent.innerHTML= "";
+  console.log("cleared top-stack")
 }
 
-
-
-
-
-//create teck-stack
-
-//LMR stand for Left Middle Right
-function buildStack (LMR) {
-  let StackBeingUsed;
-  if (LMR== "left"){
-    StackBeingUsed = ["placeholder1", "placeholder2","placeholder3","placeholder4","placeholder5","placeholder6"];
-  }
-  else if (LMR == "middle"){
-    StackBeingUsed = ["placeholder1", "placeholder2","placeholder3","placeholder4","placeholder5","placeholder6"];
-  }
-  else if (LMR == "right"){
-    StackBeingUsed = ["placeholder1", "placeholder2","placeholder3","placeholder4","placeholder5","placeholder6"];
-  }
-
-  for (let i = 0; i < StackBeingUsed.length; i++ ) {
-  const stack = document.createElement("div");
-  const stackContent = document.createElement("h3");
-  const stackHashtag = document.createElement("span");
-
-  stack.className = "stack";
-  stackContent.className = "stack-content";
-  stackHashtag.className = "hashtag";
-  stackHashtag.textContent = "#";
-  stackContent.textContent = StackBeingUsed[i]
-
-  stack.append(stackContent);
-  stackContent.append(stackHashtag);
-  document.querySelector(".teck-stack").append(stack);
-  }
-
-
-
-  //i want the hashtag before the text{
-    
+//on hover have default fade out (200ms)
+//on hover have stack fade in (about 200ms)
+//when off hover have it fade out (also about 200ms)
+//after fade off is done have everything cleared
+//start fade in of defaule screen till its done 
 
 
 
 
 
 
+
+
+
+function buildStack (UsedStackArray) {
+  // const sectionArray = //what ever the fuck we are hovering over;
+
+  const scrollElementPrimary = document.createElement("div");
+    scrollElementPrimary.className="scroll-element primary"; 
+  //first paramater is what scrool-element we are building, the second parameter will be what stack we are going to build  
+  //going to leave fixed as left stack array for now change back to section array
+  stackloop("primary", UsedStackArray);
+  const scrollElementSecondary= document.createElement("div");
+    scrollElementSecondary.className = "scroll-element secondary";
+  stackloop("secondary", UsedStackArray);
+  // append to the scrool parent 
+
+
+ //need to clear previous tech stack 
+ // should probably make the tech stack fade in and fade out 
   
-}
+  
+  
+  //builds the indivisual stack blocks
+  function stackloop(stackSection, SectionArray) {
+    console.log(SectionArray + " "+ SectionArray.length)
 
+  for (let i = 0; i < SectionArray.length ; i++){
+    const stack = document.createElement("div");
+    stack.textContent= SectionArray[i];
+    stack.className= "stack";
+    
+    if (stackSection == "primary"){
+      console.log("appended to primary")
+      scrollElementPrimary.append(stack)
+    }
+    else if (stackSection == "secondary"){
+      console.log("appended to secondary");
+      scrollElementSecondary.append(stack)
+  }    
+  //chose which scroolelement to append to using a turenery ; 
+  }
+  if (stackSection == "primary"){
+    scrollParent.append(scrollElementPrimary)
+  }
+  else if (stackSection == "secondary"){
+    scrollParent.append(scrollElementSecondary)
+}    
+  }
+}
