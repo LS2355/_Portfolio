@@ -1,19 +1,85 @@
 const scrollParent = document.querySelector(".scroll-parent");
 //check how to import a variable from another file
 //check if its possiable to share event listeners between fi
+const EventlistenerLeftStack = document.querySelector("#left-square");
+const EventlistenerMidStack = document.querySelector("#mid-square");
+const EventlistenerRightStack = document.querySelector("#right-square");
 
 
+
+//variables
 const leftStackArray = ["abc","abc","abc","abc","abc","abc","abc","abc"];
 const middleStackArray = ["bac","bac","bac","bac","bac","bac","bac","bac"];
 const rightStackArray = ["dca","dca","dca","dca","dca","dca","dca","dca"];
+
+//This is going to be what the general timeout will be for animations and for functions to run 
+const GeneralTimeout=  200;
+
+
+//Event listener for the elements
+EventlistenerLeftStack.addEventListener("mouseenter", ()=>{operationOrder(leftStackArray)})
+EventlistenerMidStack.addEventListener("mouseenter", ()=>{operationOrder(middleStackArray)})
+EventlistenerRightStack.addEventListener("mouseenter", ()=>{operationOrder(rightStackArray)})
+EventlistenerLeftStack.addEventListener("mouseleave", ()=>{displayDefault()})
+EventlistenerMidStack.addEventListener("mouseleave", ()=>{displayDefault()})
+EventlistenerRightStack.addEventListener("mouseleave", ()=>{displayDefault()})
+
+
+function operationOrder (StackArray){ 
+  scrollParentFade("out")
+  setTimeout(()=>{
+    clearstack()
+    buildStack(StackArray)
+    scrollParentFade("in")
+  },GeneralTimeout)
+ 
+}
+
+function displayDefault () {
+  scrollParentFade("out")
+  setTimeout(()=>{
+    clearstack();
+    const defaultStack = document.createElement("div");
+    defaultStack.className= "Stack-Default scroll-element";
+    defaultStack.textContent= "TECKSTACK";
+    scrollParent.append(defaultStack);
+    scrollParentFade("in")
+  }, GeneralTimeout)
+
+}
+
+
+//animation that is going to play 
+const scrollParentAnimationFadeIn = {
+  opacity: 1
+}
+const scrollParentAnimationFadeOut = {
+  opacity: 0
+}
+//duration
+const scrollParentAnimationDuration = {
+  duration: GeneralTimeout,
+  fill: "forwards"
+}
+//if you want the animiation to fade "in" or "out". just gonna do it on the parent element because it is easier
+function scrollParentFade(direction){
+  if (direction == "in"){
+    scrollParent.animate(scrollParentAnimationFadeIn, scrollParentAnimationDuration)
+  }
+  else if(direction == "out"){
+    scrollParent.animate(scrollParentAnimationFadeOut, scrollParentAnimationDuration)
+  }
+}
+
+
+
+
 
 
 //need to make it so that on default there is nothing in the scrool element;
 //just do a simple text
 //not sure if i should make it scroll or not
 //need this to pop up on page load and when im not hovering over a project
-
-
 
 
 function clearstack () {
@@ -81,3 +147,10 @@ function buildStack (UsedStackArray) {
 }    
   }
 }
+
+
+
+
+
+//run on page load
+displayDefault();
