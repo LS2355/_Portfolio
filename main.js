@@ -1,9 +1,16 @@
+//Notes
+//we need to make it so that the background image of the projects expands to cover the full screen
+//add text and shit to project div
+
+
+
 const scrollParent = document.querySelector(".scroll-parent");
 //check how to import a variable from another file
 //check if its possiable to share event listeners between fi
-const EventlistenerLeftStack = document.querySelector("#left-square");
-const EventlistenerMidStack = document.querySelector("#mid-square");
-const EventlistenerRightStack = document.querySelector("#right-square");
+const eventlistenerProjectsContainer = document.querySelector(".projects-container")
+const eventlistenerLeftStack = document.querySelector("#left-square");
+const eventlistenerMidStack = document.querySelector("#mid-square");
+const eventlistenerRightStack = document.querySelector("#right-square");
 
 
 
@@ -16,17 +23,20 @@ const rightStackArray = ["dca","dca","dca","dca","dca","dca","dca","dca"];
 const GeneralTimeout=  200;
 
 
-//Event listener for the elements
-EventlistenerLeftStack.addEventListener("mouseenter", ()=>{operationOrder(leftStackArray)})
-EventlistenerMidStack.addEventListener("mouseenter", ()=>{operationOrder(middleStackArray)})
-EventlistenerRightStack.addEventListener("mouseenter", ()=>{operationOrder(rightStackArray)})
-EventlistenerLeftStack.addEventListener("mouseleave", ()=>{displayDefault()})
-EventlistenerMidStack.addEventListener("mouseleave", ()=>{displayDefault()})
-EventlistenerRightStack.addEventListener("mouseleave", ()=>{displayDefault()})
+//Event listener for the elements         //LMR stands for Left,Middle,Right (Projects)
+eventlistenerProjectsContainer.addEventListener("mouseenter", ()=>{projectSize("Grow")})
+eventlistenerLeftStack.addEventListener("mouseenter", ()=>{operationOrder(leftStackArray, "left")})
+eventlistenerMidStack.addEventListener("mouseenter", ()=>{operationOrder(middleStackArray, "middle")})
+eventlistenerRightStack.addEventListener("mouseenter", ()=>{operationOrder(rightStackArray, "right")})
+eventlistenerProjectsContainer.addEventListener("mouseleave", ()=>{projectSize("Shrink")})
+eventlistenerLeftStack.addEventListener("mouseleave", ()=>{displayDefault()})
+eventlistenerMidStack.addEventListener("mouseleave", ()=>{displayDefault()})
+eventlistenerRightStack.addEventListener("mouseleave", ()=>{displayDefault()})
 
 
-function operationOrder (StackArray){ 
+function operationOrder (StackArray, LMR){ 
   scrollParentFade("out")
+  //need to add animation for project squares to expand in height
   setTimeout(()=>{
     clearstack()
     buildStack(StackArray)
@@ -34,6 +44,8 @@ function operationOrder (StackArray){
   },GeneralTimeout)
  
 }
+
+
 
 function displayDefault () {
   scrollParentFade("out")
@@ -49,18 +61,22 @@ function displayDefault () {
 }
 
 
+
 //animation that is going to play 
 const scrollParentAnimationFadeIn = {
   opacity: 1
 }
+
 const scrollParentAnimationFadeOut = {
   opacity: 0
 }
+
 //duration
 const scrollParentAnimationDuration = {
   duration: GeneralTimeout,
   fill: "forwards"
 }
+
 //if you want the animiation to fade "in" or "out". just gonna do it on the parent element because it is easier
 function scrollParentFade(direction){
   if (direction == "in"){
@@ -73,31 +89,10 @@ function scrollParentFade(direction){
 
 
 
-
-
-
-//need to make it so that on default there is nothing in the scrool element;
-//just do a simple text
-//not sure if i should make it scroll or not
-//need this to pop up on page load and when im not hovering over a project
-
-
 function clearstack () {
   scrollParent.innerHTML= "";
   console.log("cleared top-stack")
 }
-
-//on hover have default fade out (200ms)
-//on hover have stack fade in (about 200ms)
-//when off hover have it fade out (also about 200ms)
-//after fade off is done have everything cleared
-//start fade in of defaule screen till its done 
-
-
-
-
-
-
 
 
 
@@ -148,6 +143,35 @@ function buildStack (UsedStackArray) {
   }
 }
 
+
+
+
+//when you hover over a project this function is responsible for expanding the height;
+const growAnimation = {
+  height: "500px",
+  direction: "ease-out"
+}
+const shrinkAnimation = {
+  height: "37px",
+  direction: "ease-out"
+}
+const sizingAnimationDuration = {
+  duration: 350,
+  fill: "forwards",
+  
+}
+function projectSize (growOrShrink) {
+  if (growOrShrink == "Grow"){
+    eventlistenerLeftStack.animate(growAnimation, sizingAnimationDuration)
+    eventlistenerMidStack.animate(growAnimation, sizingAnimationDuration)
+    eventlistenerRightStack.animate(growAnimation, sizingAnimationDuration)
+  }
+  else if (growOrShrink == "Shrink"){
+    eventlistenerLeftStack.animate(shrinkAnimation, sizingAnimationDuration)
+    eventlistenerMidStack.animate(shrinkAnimation, sizingAnimationDuration)
+    eventlistenerRightStack.animate(shrinkAnimation, sizingAnimationDuration)
+  }
+}
 
 
 

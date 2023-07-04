@@ -1,18 +1,20 @@
 .project-section{
     width: 100%;
     height: auto;
-    justify-content: center;
+    justify-content: center;    
+    
 }
 .projects{
     display: flex;
     width: auto;
-    height: auto;
+    height: 37px;
     color: white;
     padding: 20px;
     margin: 12px;
     text-align: center;
     justify-content: center;
     border:1px solid rgb(21, 109, 121);
+    border-radius: 2px;
 
     background-position: center;
     background-repeat: no-repeat;
@@ -21,8 +23,12 @@
     filter: brightness(80%);
     &:hover{
         filter: brightness(100%);
+        border-radius: 9px;
+        // height: 500px;
     }
 } 
+
+
 .projects-container{
     width: 100%;
     height: auto;
@@ -42,6 +48,7 @@
     background-image: url("https://randomwordgenerator.com/img/picture-generator/57e8d64a4d56a514f1dc8460962e33791c3ad6e04e507440762e79d79649c7_640.jpg");
     &:hover{
         flex-grow: 15;
+        
     }
 }
 #mid-square{
@@ -58,6 +65,13 @@
         flex-grow: 15;
     }
 }
+
+
+
+
+
+
+
 
 .project-content{
     opacity: 0;
