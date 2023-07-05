@@ -11,6 +11,8 @@ const eventlistenerProjectsContainer = document.querySelector(".projects-contain
 const eventlistenerLeftStack = document.querySelector("#left-square");
 const eventlistenerMidStack = document.querySelector("#mid-square");
 const eventlistenerRightStack = document.querySelector("#right-square");
+//this is where we are appending all the generated project content
+const projectContentDiv = document.querySelector(".project-content")
 
 
 
@@ -18,6 +20,31 @@ const eventlistenerRightStack = document.querySelector("#right-square");
 const leftStackArray = ["abc","abc","abc","abc","abc","abc","abc","abc"];
 const middleStackArray = ["bac","bac","bac","bac","bac","bac","bac","bac"];
 const rightStackArray = ["dca","dca","dca","dca","dca","dca","dca","dca"];
+
+ //project content objects
+ const projectContentObjects = [{
+    Title: "S Plastering Inc.",
+    ProjectType: "Freelance Project",
+    Description: "dont forget to actually put a description stupid",
+    DeployLink: "make soon ",
+    GithubLink:"make soon"
+  },
+  {
+    Title: "N/A",
+    ProjectType: "",
+    Description: "",
+    DeployLink: "",
+    GithubLink:""
+  },
+  {
+    Title: "N/A",
+    ProjectType: "",
+    Description: "",
+    DeployLink: "",
+    GithubLink:""
+  }]
+
+
 
 //This is going to be what the general timeout will be for animations and for functions to run 
 const GeneralTimeout=  200;
@@ -37,6 +64,7 @@ eventlistenerRightStack.addEventListener("mouseleave", ()=>{displayDefault()})
 function operationOrder (StackArray, LMR){ 
   scrollParentFade("out")
   //need to add animation for project squares to expand in height
+  generateProjectContent(LMR)
   setTimeout(()=>{
     clearstack()
     buildStack(StackArray)
@@ -162,16 +190,74 @@ const sizingAnimationDuration = {
 }
 function projectSize (growOrShrink) {
   if (growOrShrink == "Grow"){
-    eventlistenerLeftStack.animate(growAnimation, sizingAnimationDuration)
-    eventlistenerMidStack.animate(growAnimation, sizingAnimationDuration)
-    eventlistenerRightStack.animate(growAnimation, sizingAnimationDuration)
+    eventlistenerLeftStack.animate(growAnimation, sizingAnimationDuration);
+    eventlistenerMidStack.animate(growAnimation, sizingAnimationDuration);
+    eventlistenerRightStack.animate(growAnimation, sizingAnimationDuration);
   }
   else if (growOrShrink == "Shrink"){
-    eventlistenerLeftStack.animate(shrinkAnimation, sizingAnimationDuration)
-    eventlistenerMidStack.animate(shrinkAnimation, sizingAnimationDuration)
-    eventlistenerRightStack.animate(shrinkAnimation, sizingAnimationDuration)
+    eventlistenerLeftStack.animate(shrinkAnimation, sizingAnimationDuration);
+    eventlistenerMidStack.animate(shrinkAnimation, sizingAnimationDuration);
+    eventlistenerRightStack.animate(shrinkAnimation, sizingAnimationDuration);
+  
+  };
+};
+
+//generating Project Content using the JS objects at the top of the page
+function generateProjectContent(whichProject){
+  let projectObjectNumber
+  if (whichProject == "left"){
+    projectObjectNumber = 0
   }
+  else if (whichProject == "middle"){
+    projectObjectNumber = 1
+  }
+  else if (whichProject == "right"){
+    projectObjectNumber = 2
+  }
+  //create the elements
+  const projectTitleEl = document.createElement("h1");
+  const projectTypeEl = document.createElement("h2");
+  const projectDescriptionEl = document.createElement("p");
+  const projectGithubEl = document.createElement("button");
+  const projectDeployLink = document.createElement("button");
+  
+  //add general attributes
+  projectTitleEl.className = "project-title";
+  projectTypeEl.className = "project-type";
+  projectDescriptionEl.className = "project-description"
+  projectGithubEl.className = "project-btn projectGithubLink"
+  projectDeployLink.className = "project-btn projectDeployLink"
+  //add private attributes
+  
+    projectTitleEl.textContent = projectContentObjects[projectObjectNumber].Title;
+    projectTypeEl.textContent = projectContentObjects[projectObjectNumber].ProjectType;
+    projectDescriptionEl.textContent = projectContentObjects[projectObjectNumber].Description;
+    projectGithubEl.href = projectContentObjects[projectObjectNumber].GithubLink;
+    projectDeployLink.href = projectContentObjects[projectObjectNumber].DeployLink;
+
+  
+  //append to project-content
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
