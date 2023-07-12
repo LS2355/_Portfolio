@@ -702,6 +702,7 @@ h1, h2, h3, p {
   border-radius: 2px;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   transition: all 600ms;
   filter: brightness(80%);
 }
@@ -750,6 +751,14 @@ h1, h2, h3, p {
 }
 
 .project-content {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 100%;
+  width: 350px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.76);
+  background-color: rgba(0, 0, 0, 0.678);
+  border-radius: 2px;
   opacity: 0;
   transition: all 200ms;
 }
@@ -842,4 +851,24 @@ h1, h2, h3, p {
   color: rgb(0, 0, 0);
   box-shadow: 0px 0px 9px rgb(0, 0, 0);
   border-radius: 12px;
+}
+
+.project-title {
+  margin-top: 10px;
+}
+
+.project-type {
+  padding: 15px;
+  float: right;
+  font-size: smaller;
+  font-weight: 400;
+}
+
+.project-description {
+  margin: 12px 5px;
+}
+
+.githubLogoSize {
+  width: 30px;
+  height: 30px;
 }/*# sourceMappingURL=style.css.map */

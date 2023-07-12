@@ -12,8 +12,7 @@ const eventlistenerLeftStack = document.querySelector("#left-square");
 const eventlistenerMidStack = document.querySelector("#mid-square");
 const eventlistenerRightStack = document.querySelector("#right-square");
 //this is where we are appending all the generated project content
-const projectContentDiv = document.querySelector(".project-content")
-
+const projectContentDOM = document.getElementsByClassName("project-content");
 
 
 //variables
@@ -56,9 +55,10 @@ eventlistenerLeftStack.addEventListener("mouseenter", ()=>{operationOrder(leftSt
 eventlistenerMidStack.addEventListener("mouseenter", ()=>{operationOrder(middleStackArray, "middle")})
 eventlistenerRightStack.addEventListener("mouseenter", ()=>{operationOrder(rightStackArray, "right")})
 eventlistenerProjectsContainer.addEventListener("mouseleave", ()=>{projectSize("Shrink")})
-eventlistenerLeftStack.addEventListener("mouseleave", ()=>{displayDefault()})
-eventlistenerMidStack.addEventListener("mouseleave", ()=>{displayDefault()})
-eventlistenerRightStack.addEventListener("mouseleave", ()=>{displayDefault()})
+  //hover off the value being pass threw is what value we are using for the array
+eventlistenerLeftStack.addEventListener("mouseleave", ()=>{displayDefault(0)})
+eventlistenerMidStack.addEventListener("mouseleave", ()=>{displayDefault(1)})
+eventlistenerRightStack.addEventListener("mouseleave", ()=>{displayDefault(2)})
 
 
 function operationOrder (StackArray, LMR){ 
@@ -75,8 +75,11 @@ function operationOrder (StackArray, LMR){
 
 
 
-function displayDefault () {
+function displayDefault (LMR) {
   scrollParentFade("out")
+   setTimeout(()=>{
+    clearProjectContent(LMR);    
+   },100)
   setTimeout(()=>{
     clearstack();
     const defaultStack = document.createElement("div");
@@ -119,7 +122,6 @@ function scrollParentFade(direction){
 
 function clearstack () {
   scrollParent.innerHTML= "";
-  console.log("cleared top-stack")
 }
 
 
@@ -167,7 +169,7 @@ function buildStack (UsedStackArray) {
   }
   else if (stackSection == "secondary"){
     scrollParent.append(scrollElementSecondary)
-}    
+  }    
   }
 }
 
@@ -202,6 +204,13 @@ function projectSize (growOrShrink) {
   };
 };
 
+
+
+//style button wrapper
+
+
+
+ 
 //generating Project Content using the JS objects at the top of the page
 function generateProjectContent(whichProject){
   let projectObjectNumber
@@ -218,30 +227,65 @@ function generateProjectContent(whichProject){
   const projectTitleEl = document.createElement("h1");
   const projectTypeEl = document.createElement("h2");
   const projectDescriptionEl = document.createElement("p");
-  const projectGithubEl = document.createElement("button");
-  const projectDeployLink = document.createElement("button");
+  const projectButtonWrapper = document.createElement("div");
+    //use createElementNS for SVG link: https://stackoverflow.com/questions/8215021/create-svg-tag-with-javascript
+
+  const projectGithubEl = document.createElement("a");
+  const projectDeployLink = document.createElement("a");
   
   //add general attributes
   projectTitleEl.className = "project-title";
   projectTypeEl.className = "project-type";
   projectDescriptionEl.className = "project-description"
-  projectGithubEl.className = "project-btn projectGithubLink"
+  projectButtonWrapper.className = "project-btn-wrapper"
+  projectGithubEl.className = "project-btn projectGithubLink social"
   projectDeployLink.className = "project-btn projectDeployLink"
+
+    //create github svg logo
+    const githubLogoSVG = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    const githubLogoPath = document.createElementNS("http://www.w3.org/2000/svg", "path")
+    githubLogoSVG.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    githubLogoSVG.setAttribute("viewBox", "0 0 16 16")
+    githubLogoPath.setAttribute("d", "M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z")
+    githubLogoSVG.append(githubLogoPath);
+    githubLogoSVG.classList = "githubLogoSize";
+    //create deploy logo 
+    const deployLinkLogoSVG = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    const deployLinkLogoPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    deployLinkLogoSVG.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    deployLinkLogoSVG.setAttribute("viewBox", "0 0 16 16");
+    deployLinkLogoPath.setAttribute("d", "M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z")
+    deployLinkLogoSVG.append(deployLinkLogoPath);
+    deployLinkLogoSVG.classList = "githubLogoSize"
+
   //add private attributes
-  
+
     projectTitleEl.textContent = projectContentObjects[projectObjectNumber].Title;
     projectTypeEl.textContent = projectContentObjects[projectObjectNumber].ProjectType;
     projectDescriptionEl.textContent = projectContentObjects[projectObjectNumber].Description;
     projectGithubEl.href = projectContentObjects[projectObjectNumber].GithubLink;
+    // projectGithubEl.textContent = "Github"
     projectDeployLink.href = projectContentObjects[projectObjectNumber].DeployLink;
+    projectDeployLink.textContent = "Visit"
+
 
   
   //append to project-content
+    projectGithubEl.append(githubLogoSVG)
+    projectDeployLink.append(deployLinkLogoSVG)
+    projectButtonWrapper.append(projectGithubEl,projectDeployLink)
+    projectContentDOM[projectObjectNumber].append(projectTitleEl,projectDescriptionEl,projectTypeEl,projectButtonWrapper)
+    
+
+
 
 
 }
 
 
+function clearProjectContent (projectContentArrayNumber) {
+  projectContentDOM[projectContentArrayNumber].innerHTML = ""
+}
 
 
 

@@ -18,6 +18,7 @@
 
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 
     transition: all 600ms;
     filter: brightness(80%);
@@ -46,6 +47,7 @@
 #left-square{
     flex-grow: .5;
     background-image: url("https://randomwordgenerator.com/img/picture-generator/57e8d64a4d56a514f1dc8460962e33791c3ad6e04e507440762e79d79649c7_640.jpg");
+
     &:hover{
         flex-grow: 15;
         
@@ -74,6 +76,15 @@
 
 
 .project-content{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 100%;
+    width: 350px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.76);
+    background-color: rgba(0, 0, 0, 0.678);
+    border-radius: 2px;
+
     opacity: 0;
     transition: all 200ms;
 }
@@ -187,4 +198,35 @@
     color: rgb(0, 0, 0);
     box-shadow: 0px 0px 9px rgb(0, 0, 0);
     border-radius: 12px;
+  }
+
+  .project-btn-wrapper{
+    // display: flex;
+    // margin: 20px 5px ;
+    // position: absolute;
+    // right: 15px;
+    // bottom: 15px;
+
+  }
+
+  .project-title{
+    margin-top: 10px ;
+  }
+  .project-type{
+    padding: 15px;
+    float: right;
+    font-size: smaller;
+    font-weight: 400
+  };
+  .project-description{
+    margin:12px 5px;
+  }
+
+  .projectGithubLink{ 
+
+  }
+
+  .githubLogoSize{
+    width: 30px;
+    height: 30px;
   }
