@@ -16,17 +16,62 @@
     height:90vh;
     margin: auto auto;
     z-index: 6001;
-    display: inherit;
+    display: flex;
+    justify-content: center;
+  
 }
+
 .open-popup{
 animation-name: pop;
 animation-duration: 1.8s;
 animation-fill-mode: forwards;
 }
 .close-popup{
+  
   animation: close-popup-a 400ms;
   animation-fill-mode: forwards;
 }
+
+
+
+.resume-popup{
+    height: 90%;
+    width: auto;
+    align-self: center;
+    z-index: 6002;
+  }
+
+.skill-popup{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.skills-card{
+  width:350px;
+  height: 40px;
+  padding: 4px;
+  margin: 8px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+
+}
+
+
+
+.contact-popup{
+  
+}
+
+
+
+
+
+
+
+
 
 
 @keyframes pop{

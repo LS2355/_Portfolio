@@ -1,15 +1,17 @@
 const popContainer = document.querySelector('.popup-container')
 const everything = document.querySelector('main')
 const pop = document.querySelector('.popup');
-function popup () {
+function popup (LittleCard) {
     
     popContainer.style.display= "block";
     pop.classList.add("open-popup")
     everything.style.filter= "blur(8px)";
-
-    pop.addEventListener("mouseout", ()=>{
+    setTimeout(()=>{
+        pop.addEventListener("mouseout", ()=>{
         closePopup();
-    })
+    }) 
+    },1500)
+
 }
 
 const closingPopupAnimation = {transform: "scale(0.001)"}
@@ -30,12 +32,25 @@ setTimeout(()=>{
 }, 600)
 }
 
+function buildPopup (whichLittleCard) {
+if (whichLittleCard == "L"){
+const resumePopupEl = document.createElement("img");
+resumePopupEl.src = "https://d25zcttzf44i59.cloudfront.net/entry-level-data-analyst-resume-example.png";
+resumePopupEl.className = "resume-popup"
+resumePopupEl.alt = "My Resume"
+pop.append(resumePopupEl)
+}
+else if (whichLittleCard == "M"){
+const skillsPopupEl = document.createElement("div")
+skillsPopupEl.className = "skills-popup"
 
+}
+else if (whichLittleCard == "R"){
+const aboutPopupEl = document.createElement("div")
+aboutPopupEl.className = "about-popup"
+}
+}
 
-
-// pop.classList.add("close-popup");
-// everything.style.filter= "blur(0px)"
-// setTimeout(() => {
-//     popContainer.style.display = "none"
-//     pop.classList.remove("close-popup")
-// }, 600);
+function clearPopupContent () {
+    pop.innerHTML= " ";
+}

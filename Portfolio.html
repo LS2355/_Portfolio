@@ -1,13 +1,15 @@
 <!-- 
     intro: inconsitanly the intro text pops back up after its animation is done
     issues:
-    cards- fix vackground ; fix length and add pic with blur; make cards float like they are in space (use css animations)
-    about me- make it dumbass
+
+    mobile: for the mobile version sctatch the who table shit and just make a simple scroll down
+    as you scroll down the projects will fade in. project image will be centered, the description will be in
+    the bottom of the image and followed by the github and deploy link.
+
     mouse trail - make a new svg because the one we have is pretty ugly
     links-when hovering on a clickable object maybe bring down the opacity of the cursor on some of them 
     sections- make it (im thinking when u click on the cards u get a nice looking pop up)
 
-    using js apply blur to the footer and the 
   -->
 
 <!-- only when hovering blur everything but that obj -->
@@ -69,6 +71,35 @@
 <!-- pop ups -->
 <div class="popup-container">
   <div class="popup">
+   
+
+      <div class="skills-popup">
+        <div class="skills-card">
+          <div class="skills-card-info">
+          <div class="skills-card-title">Javascript</div>
+          <div class="skills-card-years">3years</div>
+          <div class="skills-card-type">Language</div>
+          </div>
+
+        </div>
+        <div class="skills-card">
+          
+        </div>
+        <div class="skills-card">
+          
+        </div>
+        <div class="skills-card">
+          
+        </div>
+        <div class="skills-card">
+          
+        </div>
+      </div>
+      <!-- <div class="about-popup"> </div> -->
+
+
+
+
 
   </div>
 </div>
@@ -203,7 +234,7 @@
 
 <!-- small cards -->
 <div class="little-cards">  
-  <div class="little-card interactable" id="left-little-card" data-type="little-card" onclick="popup()">
+  <div class="little-card interactable" id="left-little-card" data-type="little-card" onclick="popup('L')">
   
     <div class="little-card-icon">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="skills-card-icon">
@@ -218,7 +249,7 @@
   
   </div>
 
-  <div class="little-card interactable" id="middle-little-card" data-type="little-card" onclick="popup()">
+  <div class="little-card interactable" id="middle-little-card" data-type="little-card" onclick="popup('M')">
   
     <div class="little-card-icon">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="skills-card-icon" id="resume-icon">
@@ -236,7 +267,7 @@
 
 
 
-  <div class="little-card interactable" id="right-little-card" data-type="little-card" onclick="popup()">
+  <div class="little-card interactable" id="right-little-card" data-type="little-card" onclick="popup('R')">
   
     <div class="little-card-icon">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"  class="skills-card-icon" id="contact-icon">

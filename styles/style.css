@@ -553,7 +553,8 @@ h1, h2, h3, p {
   height: 90vh;
   margin: auto auto;
   z-index: 6001;
-  display: inherit;
+  display: flex;
+  justify-content: center;
 }
 
 .open-popup {
@@ -565,6 +566,13 @@ h1, h2, h3, p {
 .close-popup {
   animation: close-popup-a 400ms;
   animation-fill-mode: forwards;
+}
+
+.resume-popup {
+  height: 90%;
+  width: auto;
+  align-self: center;
+  z-index: 6002;
 }
 
 @keyframes pop {
