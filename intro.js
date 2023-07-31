@@ -57,11 +57,11 @@ function runIntro() {
       setTimeout(()=>{
         calimReward.style.animation = "open 1.5s cubic-bezier(0.93, 0.32, 0.08, 1.11) 350ms" //starts color spread animation
         introText.style.animation= "fadeout 349ms linear" //starts fade out of introtext
-        DaLock.style.animation="fadeout 349ms linear"  //starts fade out of lcok
+        DaLock.style.animation="fadeout 349ms linear"  //starts fade out of lock
         setTimeout(()=>{
           introText.style.display="none";//makes lock and intro text disapear
           DaLock.style.display="none"
-        }, 350)
+        }, 345)
         setTimeout(()=>{
           introContainer.style.display="none"//makes intro container disapear
           main.style.display="grid"
@@ -69,7 +69,7 @@ function runIntro() {
           main.animate(mainOpacity, mainOpacityOptions);
           mouseColor.animate(mainOpacity,mainOpacityOptions)
  
-        },1850)
+        },1848)
       
       }
         , 550)

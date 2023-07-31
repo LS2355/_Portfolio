@@ -88,17 +88,7 @@ main{
     overflow: hidden;
 
 }
-.blur{
-    width: auto;
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    flex-wrap: wrap;
-}
 
-.blur .card:hover {
-    transform: scale(1.1, 1.1);
-  }
   
 //   .blur:hover > .card:not(:hover) {
 //     filter: blur(3px);

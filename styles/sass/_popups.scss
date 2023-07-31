@@ -18,7 +18,8 @@
     z-index: 6001;
     display: flex;
     justify-content: center;
-  
+
+    overflow: scroll;
 }
 
 .open-popup{
@@ -43,6 +44,7 @@ animation-fill-mode: forwards;
 
 .skill-popup{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   
 }
@@ -55,11 +57,82 @@ animation-fill-mode: forwards;
 
   display: flex;
   flex-wrap: wrap;
+}
 
+.soft-skills-text{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 60px;
+  color: whitesmoke;
+  margin: 30px Auto;
+  width: 100%;
+  height: 120px;
+}
+.hard-skills-text{
 
 }
 
+//skills tab in the skills card popup
 
+.skills-popup{
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; //for mobile version switch this to column
+  justify-content: center;
+}
+
+.skills-tab{
+  width: 250px;
+  height: 55px;
+  margin: 9px 15px;
+  padding: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px $purp;
+  border-radius: 2px;
+  box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.623);
+}
+
+.skills-tab-info{
+  float: left;
+  width: 194px;
+  height: 100%;
+}
+.skills-tab-title{
+  color: rgb(218, 218, 218);
+  font-size: medium;
+  transition: 400ms ;
+
+  &:hover{
+      color: white;
+  }
+}
+.skills-tab-years{
+  color: gray;
+  font-size: small;
+}
+.skills-tab-type{
+  color: $purp;
+  font-size: x-small;
+  position: relative;
+  padding-top: 5px;
+}
+.skills-tab-icon-div{
+  width: 50px;
+  text-align: right;
+  display: flex;
+}
+.skills-tab-icon{
+  width: auto;
+  height: 46px;
+  padding: 2px;
+  border-radius: 5px;
+  float: right;
+}
 
 .contact-popup{
   
