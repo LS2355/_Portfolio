@@ -156,7 +156,7 @@ setTimeout(()=>{
    
     
     
-}, 595)
+}, 595) 
 }
 
 function buildPopup (whichLittleCard) {
@@ -223,7 +223,8 @@ else if (whichLittleCard == "M"){
                 skillsPopupEl.append(hardSkillsText)
 
 
-
+//create new for loop to build the hard skil elements .
+// they will go through the array just like the soft skill elements do 
 
 
 

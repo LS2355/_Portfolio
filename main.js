@@ -224,8 +224,8 @@ function generateProjectContent(whichProject){
     projectObjectNumber = 2
   }
   //create the elements
-  const projectTitleEl = document.createElement("h1");
-  const projectTypeEl = document.createElement("h2");
+  // const projectTitleEl = document.createElement("h1");
+  // const projectTypeEl = document.createElement("h2");
   const projectDescriptionEl = document.createElement("p");
   const projectButtonWrapper = document.createElement("div");
     //use createElementNS for SVG link: https://stackoverflow.com/questions/8215021/create-svg-tag-with-javascript
@@ -233,12 +233,26 @@ function generateProjectContent(whichProject){
   const projectGithubEl = document.createElement("a");
   const projectDeployLink = document.createElement("a");
   
+  //this is the test for adding 
+    const projectTitleEl = document.createElement("div");
+    const projectTypeEl = document.createElement("div");
+
+    projectTitleEl.className = "project-title";
+    projectTypeEl.className = "project-type";
+    projectTitleEl.textContent = projectContentObjects[projectObjectNumber].Title;
+    projectTypeEl.textContent = projectContentObjects[projectObjectNumber].ProjectType;
+    
+
+
+
+
+
   //add general attributes
-  projectTitleEl.className = "project-title";
-  projectTypeEl.className = "project-type";
+  // projectTitleEl.className = "project-title";
+  // projectTypeEl.className = "project-type";
   projectDescriptionEl.className = "project-description"
   projectButtonWrapper.className = "project-btn-wrapper"
-  projectGithubEl.className = "project-btn projectGithubLink social"
+  projectGithubEl.className = "project-btn projectGithubLink"
   projectDeployLink.className = "project-btn projectDeployLink"
 
     //create github svg logo
@@ -260,13 +274,13 @@ function generateProjectContent(whichProject){
 
   //add private attributes
 
-    projectTitleEl.textContent = projectContentObjects[projectObjectNumber].Title;
-    projectTypeEl.textContent = projectContentObjects[projectObjectNumber].ProjectType;
+    // projectTitleEl.textContent = projectContentObjects[projectObjectNumber].Title;
+    // projectTypeEl.textContent = projectContentObjects[projectObjectNumber].ProjectType;
     projectDescriptionEl.textContent = projectContentObjects[projectObjectNumber].Description;
     projectGithubEl.href = projectContentObjects[projectObjectNumber].GithubLink;
     // projectGithubEl.textContent = "Github"
     projectDeployLink.href = projectContentObjects[projectObjectNumber].DeployLink;
-    projectDeployLink.textContent = "Visit"
+   
 
 
   
@@ -274,7 +288,10 @@ function generateProjectContent(whichProject){
     projectGithubEl.append(githubLogoSVG)
     projectDeployLink.append(deployLinkLogoSVG)
     projectButtonWrapper.append(projectGithubEl,projectDeployLink)
-    projectContentDOM[projectObjectNumber].append(projectTitleEl,projectDescriptionEl,projectTypeEl,projectButtonWrapper)
+      //appended ProjectTypeEl to projectTitleEl instead
+      //tookout [, projectTypeEl]
+    projectTitleEl.append(projectTypeEl)
+    projectContentDOM[projectObjectNumber].append(projectTitleEl,projectDescriptionEl,projectButtonWrapper)
     
 
 

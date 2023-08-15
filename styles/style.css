@@ -99,21 +99,10 @@ nav {
   font-size: 30px;
 }
 
-.nav {
-  flex-grow: 3;
-}
-.nav a {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  transition: 400ms;
-}
-.nav a:hover {
-  transform: scale(0.9);
-  color: mediumslateblue;
-}
-
 .nav-socials {
   flex-grow: 1;
+  justify-content: right;
+  margin-right: 20px;
 }
 
 .social {
@@ -603,7 +592,7 @@ h1, h2, h3, p {
 .skills-tab {
   width: 250px;
   height: 55px;
-  margin: 9px 15px;
+  margin: 9px 10px;
   padding: 3px;
   display: flex;
   flex-wrap: wrap;
@@ -651,6 +640,26 @@ h1, h2, h3, p {
   padding: 2px;
   border-radius: 5px;
   float: right;
+}
+
+.hard-skills-card-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hard-skills-card {
+  width: 225px;
+  height: 225px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 3px solid rgb(56, 56, 56);
+  color: white;
+}
+
+#contact-image {
+  width: 250px;
+  height: 250px;
 }
 
 @keyframes pop {
@@ -839,12 +848,12 @@ h1, h2, h3, p {
 .project-content {
   position: absolute;
   bottom: 0px;
-  right: 0px;
-  height: 100%;
-  width: 350px;
+  height: 80px;
+  width: 100%;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.76);
   background-color: rgba(0, 0, 0, 0.678);
-  border-radius: 2px;
+  display: flex;
+  flex-wrap: wrap;
   opacity: 0;
   transition: all 200ms;
 }
@@ -939,22 +948,43 @@ h1, h2, h3, p {
   border-radius: 12px;
 }
 
+.project-btn-wrapper {
+  flex-grow: 2;
+  display: grid;
+  place-content: center;
+  width: 80px;
+}
+
 .project-title {
-  margin-top: 10px;
+  flex-grow: 2;
+  display: grid;
+  place-content: center;
 }
 
 .project-type {
-  padding: 15px;
-  float: right;
-  font-size: smaller;
+  font-size: xx-small;
   font-weight: 400;
+  justify-content: center;
 }
 
 .project-description {
+  display: grid;
+  place-content: center;
   margin: 12px 5px;
+  flex-grow: 2;
+}
+
+.projectGithubLink {
+  padding: 0px 10px;
+  fill: white;
+  transition: 400ms;
+}
+.projectGithubLink:hover {
+  transform: scale(1.2);
+  fill: mediumslateblue;
 }
 
 .githubLogoSize {
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
 }/*# sourceMappingURL=style.css.map */

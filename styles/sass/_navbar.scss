@@ -25,22 +25,12 @@ transition:400ms;
     }
 }
 
-.nav{
-    flex-grow: 3;
-    a{
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      transition: 400ms;
-      &:hover{
-        transform: scale(.9);
-        color: $purp;
-      }
-    }
-    
-}
+
 
 .nav-socials{
     flex-grow: 1;    
+    justify-content: right;
+    margin-right: 20px;
 }
 
 .social{

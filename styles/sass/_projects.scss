@@ -28,7 +28,7 @@
         // height: 500px;
     }
 } 
-
+  
 
 .projects-container{
     width: 100%;
@@ -78,12 +78,12 @@
 .project-content{
     position: absolute;
     bottom: 0px;
-    right: 0px;
-    height: 100%;
-    width: 350px;
+    height: 80px;
+    width: 100%;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.76);
     background-color: rgba(0, 0, 0, 0.678);
-    border-radius: 2px;
+    display: flex;
+    flex-wrap: wrap;
 
     opacity: 0;
     transition: all 200ms;
@@ -201,6 +201,10 @@
   }
 
   .project-btn-wrapper{
+    flex-grow: 2;
+    display: grid;
+    place-content: center;
+    width: 80px;
     // display: flex;
     // margin: 20px 5px ;
     // position: absolute;
@@ -210,23 +214,34 @@
   }
 
   .project-title{
-    margin-top: 10px ;
+    flex-grow: 2;
+    display: grid;
+    place-content: center;
+
   }
   .project-type{
-    padding: 15px;
-    float: right;
-    font-size: smaller;
-    font-weight: 400
+    font-size: xx-small;
+    font-weight: 400;
+    justify-content: center;
   };
   .project-description{
+    display: grid;
+    place-content: center;
     margin:12px 5px;
+    flex-grow: 2;
   }
 
   .projectGithubLink{ 
-
+    padding: 0px 10px;
+    fill: white;
+    transition: 400ms;
+    &:hover{
+        transform: scale(1.2);
+        fill: $purp;
+    }
   }
 
   .githubLogoSize{
-    width: 30px;
-    height: 30px;
+    width: 27px;
+    height: 27px;
   }
