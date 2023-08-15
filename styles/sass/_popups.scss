@@ -150,6 +150,50 @@ animation-fill-mode: forwards;
      
 }
 
+.contact-title{
+  width: 100%;
+  height: 40px;
+  margin: 10px auto;
+  display: grid;
+  place-content: center;
+  font-size: 35px;
+}
+.contact-middle-wrapper{
+  position: absolute;
+  width: 100%;
+  top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.contact-side{
+  width: 50%;
+  padding: 20px 10px;
+}
+#contact-left-section{
+  background-color: green;
+}
+#contact-right-section{
+  background-color: greenyellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #contact-image{
   width: 250px;
   height: 250px;
