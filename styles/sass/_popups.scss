@@ -160,23 +160,26 @@ animation-fill-mode: forwards;
 }
 .contact-middle-wrapper{
   position: absolute;
+  height: 50%;
   width: 100%;
   top: 70px;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
 
 }
 .contact-side{
   width: 50%;
   padding: 20px 10px;
+  height: 100%;
 }
 #contact-left-section{
   background-color: green;
+  float: left;
 }
 #contact-right-section{
   background-color: greenyellow;
+  float: right;
+  display: grid;
+  place-content: center;
 }
 
 
