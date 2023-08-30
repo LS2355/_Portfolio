@@ -84,7 +84,7 @@ function displayDefault (LMR) {
     clearstack();
     const defaultStack = document.createElement("div");
     defaultStack.className= "Stack-Default scroll-element";
-    defaultStack.textContent= "TECKSTACK";
+    defaultStack.textContent= "TECHSTACK";
     scrollParent.append(defaultStack);
     scrollParentFade("in")
   }, GeneralTimeout)

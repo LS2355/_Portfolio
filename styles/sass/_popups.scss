@@ -77,7 +77,7 @@ animation-fill-mode: forwards;
 
 .skills-popup{
   width: 100%;
-  height: auto;
+  height: 100%;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -151,64 +151,130 @@ animation-fill-mode: forwards;
 }
 
 .contact-title{
-  width: 100%;
-  height: 40px;
-  margin: 10px auto;
-  display: grid;
-  place-content: center;
-  font-size: 35px;
+width: 100% ;
+height: 80px;
+display: grid;
+place-content: center;
+font-size: xx-large;
+position: absolute;
+top: 0px;
+left: 0px;
 }
-.contact-middle-wrapper{
+
+
+
+
+.contact-page-card-wrapper{
   position: absolute;
-  height: 50%;
-  width: 100%;
-  top: 70px;
-  display: flex;
+  height: 25%;
+  width: 37%;
+}
 
+.contact-page-card-wrapper-large{
+position:absolute;
+height: 25%;
+width: 50%;
 }
-.contact-side{
-  width: 50%;
-  padding: 20px 10px;
+
+
+.contact-page-card{
   height: 100%;
-}
-#contact-left-section{
-  background-color: green;
-  float: left;
-}
-#contact-right-section{
-  background-color: greenyellow;
+  width: 90%;
+  margin: 0px;
+  padding: 0px;
+  background-color: grey;
+  border-radius: 12px;
   float: right;
+  
+
+  overflow: hidden;
+}
+.contact-card-side-text{
+  height: 100%;
+  width: 8%;
+  float: left;
+  text-orientation: mixed;
+  writing-mode: vertical-rl;
   display: grid;
   place-content: center;
+  justify-content: center;
+  font-size: x-large;
+  letter-spacing: 3px;
+  color: $purp;
+  text-shadow: rgb(255, 255, 255) 2px 0 10px;
 }
 
+.contact-page-card-picture{
+  width: 40%;
+  height: inherit;
+  float: left;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  background-image: url("https://1.bp.blogspot.com/-iCnFX7eWVjs/XR9NQutHXcI/AAAAAAAAJ9k/ISWH3UXgJF8QJdsV6P9wh3agzOwOF_aYgCLcBGAs/s1600/cat-1285634_1920.png");
+}
 
+.contact-page-card-text{
+  width: 55%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  float: right;
+  text-align: left;
 
+}
 
+// positions for contact popup cards
+#top-left-position{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#mid-right-position{
+  top: 50%;
+  left: 50%;
+  transform: translate(10%, -50%);
+}
+#mid-left-position{
+  top: 50%;
+  left: 50%;
+  transform: translate(-110%, -50%);
+}
+#bottom-left-position{
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+#contact-card-side-text-right{
+  float: right;
+}
 
+#contact-card-pic-0{
+background-image: url("");
+}
+#contact-card-pic-1{
+background-image: url("");
+}
+#contact-card-pic-2{
+background-image: url("");  
+}
+#contact-card-pic-3{
+background-image: url("");
+}
 
-
-
-
-
-
-
-
-
-
+//image in the center of the page
 #contact-image{
-  width: 250px;
-  height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12%;
+  aspect-ratio: auto 1/1;
 }
-
-
-
-
-
-
-
-
 
 
 @keyframes pop{

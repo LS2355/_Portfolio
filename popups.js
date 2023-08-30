@@ -124,6 +124,29 @@ const hardSkillsArray = [
         Img: ""
     }
 ]
+const contactSquaresContent = [
+    {
+        Title: "Top",
+        //remeber you have to assign the image in a class for background the element you are assigning to is the contact-page-card-picture
+        Paragraph: "this is just filler text so i can see if this will generate properly"
+    },
+    {
+        Title: "middle-R",
+        //remeber you have to assign the image in a class for background the element you are assigning to is the contact-page-card-picture
+        Paragraph: "this is just filler text so i can see if this will generate properly"
+    },
+    {
+        Title: "middle-L",
+        //remeber you have to assign the image in a class for background the element you are assigning to is the contact-page-card-picture
+        Paragraph: "this is just filler text so i can see if this will generate properly"
+    },
+    {
+        Title: "Bottom",
+        //remeber you have to assign the image in a class for background the element you are assigning to is the contact-page-card-picture
+        Paragraph: "this is just filler text so i can see if this will generate properly"
+    }
+]
+
 
 
 function popup (LittleCard) {
@@ -137,7 +160,7 @@ function popup (LittleCard) {
 
 }
 
-const closingPopupAnimation = {transform: "scale(0.001)"}
+const closingPopupAnimation = {transform: "scale(0.001)", opacity: "0"}
 const removeFilter = {filter: "blur(0px)"}
 
 const animationTime = {
@@ -180,7 +203,7 @@ else if (whichLittleCard == "M"){
     //ok so the plan is to get everything to append in the order that we want we will declare an outside variable and when the i index in the
     //for loop is equal to the for loop it will generate that but first i have to finish making all the skill elements.
 
-        for (let i=0; i < skillsArray.length; i++){
+        for (let i=0; i > skillsArray.length; i++){
 
 
             
@@ -238,11 +261,69 @@ else if (whichLittleCard == "M"){
 
 }
 else if (whichLittleCard == "R"){
-const aboutPopupEl = document.createElement("div")
-aboutPopupEl.className = "about-popup"
+
+    const contactTitle = document.createElement("div");
+
+    pop.append(contactTitle)
+    //assign classes
+    for (let i=0; i < contactSquaresContent.length; i++){
+
+    //create elements
+    const contactCardWrapper = document.createElement("div");
+    const contactCardSideText= document.createElement("div");
+    const contactCard = document.createElement("div");
+    const contactCardPic = document.createElement("div");
+    const contactCardText = document.createElement("div");
+
+
+
+
+
+
+
+
+    contactTitle.className= "contact-title";
+    contactCardWrapper.className= (i == 0 || i == 3 )?"contact-page-card-wrapper-large": "contact-page-card-wrapper";//first and last div will be the bigger cards
+    contactCardSideText.className= "contact-card-side-text";
+    contactCard.className= "contact-page-card";
+    contactCardPic.className= "contact-page-card-picture";
+    contactCardText.className= "contact-page-card-text";
+
+    //Switch operator for assigning ID's and other small things
+    let position;
+     switch(i){
+        case 0:
+            position= "top-left-position";
+            break;
+        case 1:
+            position= "mid-right-position";
+            contactCardSideText.id="contact-card-side-text-right"
+            break;
+        case 2: 
+            position= "mid-left-position";
+            break;
+        case 3 :
+            position = "bottom-left-position";
+            break;
+     }
+     contactCardWrapper.id= position;
+     contactCardPic.id = `contact-card-pic-${i}`;
+
+    //assign text
+    contactCardSideText.textContent= contactSquaresContent[i].Title;
+    contactCardText.textContent= contactSquaresContent[i].Paragraph;
+    
+    //append elements
+    contactCard.append(contactCardPic, contactCardText);
+    contactCardWrapper.append(contactCardSideText, contactCard);
+    pop.append(contactCardWrapper);
+                     console.log(contactSquaresContent[i].Title)
+    }
+    
 }
 }
 
 function clearPopupContent () {
     pop.innerHTML= " ";
 }
+
